@@ -7,9 +7,9 @@ $(document).ready(function(){
             data: "var=" + val + "&pval=" + pval,
             type: 'POST',
             success: function(response) {
-            	response = response.replace("ObjectId", "")
-            				.replace("(", "")
-            				.replace(")", "")
+            	response = response.replace(/ObjectId/g, "")
+            				.replace(/\|\(/g, "")
+            				.replace(/)/g, "")
             				.replace(/'/g, '"');
       		    
       		    if(urle == '/selDB' && pval != true)

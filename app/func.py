@@ -2,9 +2,9 @@ from pymongo import MongoClient
 import json
 from flask import jsonify
 
-client = MongoClient()
-
-db = client.tdlsch
+client = MongoClient('127.2.36.130')
+client.pytdl.authenticate('admin', 'tl8aCJbsbZ1E')
+db = client.pytdl
 
 class func(object):
 	
